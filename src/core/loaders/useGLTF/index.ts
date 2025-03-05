@@ -149,6 +149,6 @@ export async function useGLTF<T extends string | string[]>(
     path,
     setExtensions(options, dracoLoader, extendLoader),
   )) as unknown as GLTFResult
-  dracoLoader.dispose()
+  dracoLoader?.dispose()
   return gltfModel as T extends string[] ? GLTFResult[] : GLTFResult
 }
