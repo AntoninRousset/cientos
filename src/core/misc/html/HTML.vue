@@ -180,8 +180,12 @@ watch(
           width: sizes.width.value,
           height: sizes.height.value,
         })
+        const scale
+          = distanceFactor?.value === undefined
+            ? 1
+            : objectScale(group, camera.value as TresCamera) * distanceFactor?.value
         el.value.style.cssText
-        = `position:absolute;top:0;left:0;transform:translate3d(${vector[0]}px,${vector[1]}px,0);transform-origin:0 0;`
+        = `position:absolute;top:0;left:0;transform:translate3d(${vector[0]}px,${vector[1]}px,0) scale(${scale});transform-origin:0 0;`
       }
 
       if (target && !el.value.parentNode) {

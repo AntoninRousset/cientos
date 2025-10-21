@@ -110,7 +110,8 @@ function setExtensions(
   options: GLTFLoaderOptions,
   dracoLoader: DRACOLoader | null,
   extendLoader?: (loader: TresGLTFLoaderType,
-) => void) {
+  ) => void,
+) {
   return (loader: TresGLTFLoaderType) => {
     if (extendLoader) {
       extendLoader(loader)
